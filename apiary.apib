@@ -7,8 +7,7 @@ Notes API is a *short texts saving* service similar to its physical paper presen
 Notes related resources of the **Notes API**
 
 ## Objects [/objects_near]
-### Get objects near user [GET]
-
+### Get objects near ll [GET]
 + Request (application/json)
 
         {
@@ -19,7 +18,7 @@ Notes related resources of the **Notes API**
 + Response 200 (application/json)
 
         [{
-            "id": 1, 
+            "id": "A unique string identifier for this venue", 
             "stats": {
                 "checkinsCount": 1,
                 "usersCount": 1,
@@ -28,7 +27,46 @@ Notes related resources of the **Notes API**
             "name": "The best known name for this venue.",
             "category": "Name of the category",
         }, 
-        ...
         ]
 
+## Object [/object]
+### GET object by id [GET]
 
++ Request (application/json)
+
+        {
+            "id": "A unique string identifier for this venue.",
+        }
+    
++ Response 200 (application/json)
+
+        [{
+            "id": "A unique string identifier for this venue", 
+            "stats": {
+                "checkinsCount": 1,
+                "usersCount": 1,
+                "tipCount": 1
+            },
+            "name": "The best known name for this venue.",
+            "category": "Name of the category",
+            "description": "Description of the venue provided by venue owner.",
+        },
+        ]
+        
+### GET object by id [POST]
++ Request (application/json)
+
+        {
+            "action": "buy/sell/upgrade",
+            "id": "A unique string identifier for this venue.",
+        }
+    
++ Response 200 (application/json)
+
+        [{
+            "status": "ok"
+        }, 
+        {
+            "status":
+        }
+        ]
