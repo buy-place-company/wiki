@@ -1,0 +1,27 @@
+FORMAT: 1A
+
+# Buy-it API
+Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+
+# Group Notes
+Notes related resources of the **Notes API**
+
+## Objects [/objects]
+### Get objects near user [GET]
+
++ Request (application/json)
+
+        {
+            "lat": 44.3,
+            "lng": 37.2
+        }
+    
++ Response 200 (application/json)
+
+        [{
+          "id": 1, "title": "Jogging in park"
+        }, {
+          "id": 2, "title": "Pick-up posters from post-office"
+        }]
+
+
