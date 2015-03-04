@@ -19,8 +19,13 @@ Notes related resources of the **Notes API**
 + Response 200 (application/json)
 
         [{
-          "id": 1, 
-          "title": "Jogging in park"
+            "id": 1, 
+            "stats": {
+                "checkinsCount": 1,
+                "usersCount": 1,
+                "tipCount": 1
+            },
+            
         }, 
         ...
         ]
