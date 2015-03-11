@@ -1,1 +1,1 @@
-[Read API][/apiary.md]
+[Read API](/apiary.md)
