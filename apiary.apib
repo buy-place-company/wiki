@@ -26,17 +26,19 @@ Notes related resources of the **Notes API**
             },
             "name": "The best known name for this venue.",
             "category": "Name of the category",
-        }, 
+            "type": "social",
+            "lvl": 10,
+            "owner": 643688446,
+            "price": 1000
+        },
         ]
 
-## Object [/object]
-### GET object by id [GET]
+## List user's objects [/user_objects]
+### GET objects [GET]
 
 + Request (application/json)
 
-        {
-            "id": "A unique string identifier for this venue.",
-        }
+        { }
     
 + Response 200 (application/json)
 
@@ -49,10 +51,14 @@ Notes related resources of the **Notes API**
             },
             "name": "The best known name for this venue.",
             "category": "Name of the category",
-            "description": "Description of the venue provided by venue owner.",
+            "type": "social",
+            "lvl": 10,
+            "owner": 643688446,
+            "price": 1000
         },
         ]
-        
+  
+## List user's objects [/object]      
 ### GET object by id [POST]
 + Request (application/json)
 
@@ -64,10 +70,45 @@ Notes related resources of the **Notes API**
 + Response 200 (application/json)
 
         [{
-            "status": "ok"
+            "status": "ok",
+            "code": "0",
+            "cash": 0,
         }, 
         {
             "status": "error",
-            "error_code": "81"
+            "code": "100",
+        },
+        {
+            "status": "undone",
+            "code": "200",
+            "price": 647647,
+            "cash": 0,
         }
         ]
+
+        
+## Rating [/rating]      
+### GET users from rating [POST]
++ Request (application/json)
+
+        { }
+    
++ Response 200 (application/json)
+
+        [{
+            "name": "John",
+            "avatar": "http://url",
+            "cash": 0,
+        }, 
+        {
+            "status": "error",
+            "code": "100",
+        },
+        {
+            "status": "undone",
+            "code": "200",
+            "price": 647647,
+            "cash": 0,
+        }
+        ]        
+        
