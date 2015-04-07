@@ -14,21 +14,25 @@ Buy-it API is a *game* service similar to cashsquare
     
 + Response 200 (application/json)
 
-        [{
-            "id": "A unique string identifier for this venue", 
-            "stats": {
-                "checkinsCount": 1,
-                "usersCount": 1,
-                "tipCount": 1
-            },
-            "name": "The best known name for this venue.",
-            "category": "Name of the category",
-            "type": "social",
-            "lvl": 10,
-            "owner": 643688446,
-            "price": 1000
-        },
-        ]
+        {
+                "status":200,
+                "data": [
+                        {
+                                "id": "A unique string identifier for this venue", 
+                                "stats": {
+                                "checkinsCount": 1,
+                                "usersCount": 1,
+                                "tipCount": 1
+                                },
+                                "name": "The best known name for this venue.",
+                                "category": "Name of the category",
+                                "type": "social",
+                                "lvl": 10,
+                                "owner": 643688446,
+                                "price": 1000
+                        },
+                ]
+        }
 
 ## List user's objects [/user_objects]
 ### GET objects [GET]
