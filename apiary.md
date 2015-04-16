@@ -71,17 +71,16 @@ Buy-it API is a *game* service similar to cashsquare
 + Response 200 (application/json)
 
         [{
-            "status": "ok",
-            "code": "0",
+            "status": "200",
             "cash": 0,
         }, 
         {
-            "status": "error",
-            "code": "100",
+            "status": "300",
+            "message": "Fail",
         },
         {
-            "status": "undone",
-            "code": "200",
+            "status": "201",
+            "message": "Canceled",
             "price": 647647,
             "cash": 0,
         }
