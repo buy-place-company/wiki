@@ -29,7 +29,9 @@ Buy-it API is a *game* service similar to cashsquare
                                 "type": "social",
                                 "lvl": 10,
                                 "owner": 643688446,
-                                "price": 1000
+                                "price": 1000,
+                                "latitude": 44.4,
+                                "longitude": 38.1
                         },
                 ]
         }
@@ -55,7 +57,9 @@ Buy-it API is a *game* service similar to cashsquare
             "type": "social",
             "lvl": 10,
             "owner": 643688446,
-            "price": 1000
+            "price": 1000,
+            "latitude": 44.4,
+            "longitude": 38.1
         },
         ]
   
