@@ -357,13 +357,14 @@ collect_loot - собрать loot.
 
 Список сделок. player - игрок с которым заключена сделка. object - объект. Стоимость сделки определяется полем deal_price object'а.
 
-## Deals [/deals/{deal_id}]
+## Deals [/deals]
 ### Response deal [POST]
 + Request (application/json)
 
         { 
             "access_token": "dtgthzergateavnbategsbaebaenst4",
-            "action": "accept/reject"
+            "action": "accept/reject",
+            "deal_id": 55
         }
         
 + Response 200 (application/json)
