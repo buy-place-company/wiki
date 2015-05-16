@@ -32,6 +32,8 @@ Buy-it API is a *game* service similar to cashsquare
                                 "latitude": 44.4,
                                 "longitude": 38.1,
                                 "max_loot": 900,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": 1500,
                                 "sell_price": 500,
@@ -53,6 +55,8 @@ Buy-it API is a *game* service similar to cashsquare
                                 "latitude": 44.4,
                                 "longitude": 38.1,
                                 "max_loot": null,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": null,
                                 "sell_price": null,
@@ -73,12 +77,14 @@ Buy-it API is a *game* service similar to cashsquare
                                 "owner": 643688446,
                                 "latitude": 44.4,
                                 "longitude": 38.1,
-                                "max_loot": null,
+                                "max_loot": 500,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": 1000,
                                 "update_price": null,
                                 "sell_price": null,
                                 "deal_price": null,
-                                "loot": null
+                                "loot": "144"
                 }]
         }
 
@@ -87,6 +93,7 @@ Buy-it API is a *game* service similar to cashsquare
 У здания должна быть граница, до которой копятся деньги на здании (max_loot) (предполагаю, что должно зависеть от уровня здания (max_loot=f(lvl)). По запросу POST /object action=collect_loot (см. ниже) счетчик здания обнуляется и loot переводится на счет игрока.
 
 Хэши можно передавать в любом случае (null) или не передавать, если они не нужны. Наверное это дело вкуса. Или как то переструктурировать JSON.
+"income"/"expence" - доход/расход за ед.вр. (1 час может быть?) вычисляется от чекинов и уровня здания??? + нужен какой то негативный фактор. Санэпидем или как то так.
 
 
 ## List user's objects [/my_objects]
@@ -117,6 +124,8 @@ Buy-it API is a *game* service similar to cashsquare
                                 "latitude": 44.4,
                                 "longitude": 38.1,
                                 "max_loot": 900,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": 1500,
                                 "sell_price": 500,
@@ -152,12 +161,14 @@ Buy-it API is a *game* service similar to cashsquare
                                 "owner": 643688446,
                                 "latitude": 44.4,
                                 "longitude": 38.1,
-                                "max_loot": null,
+                                "max_loot": 500,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": null,
                                 "sell_price": null,
                                 "deal_price": 750,
-                                "loot": null
+                                "loot": 314
                 }]
         }
 То же самое что и GET /my_objects, только возвращать объекты player'а по player_id.
@@ -189,6 +200,8 @@ Buy-it API is a *game* service similar to cashsquare
                                 "latitude": 44.4,
                                 "longitude": 38.1,
                                 "max_loot": 900,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": 1500,
                                 "sell_price": 500,
@@ -227,6 +240,8 @@ Buy-it API is a *game* service similar to cashsquare
                                 "latitude": 44.4,
                                 "longitude": 38.1,
                                 "max_loot": 900,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": 1500,
                                 "sell_price": 500,
@@ -386,6 +401,8 @@ collect_loot - собрать loot.
                                 "latitude": 44.4,
                                 "longitude": 38.1,
                                 "max_loot": 900,
+                                "income": 12,
+                                "expense": 15,
                                 "buy_price": null,
                                 "update_price": 1500,
                                 "sell_price": 500,
