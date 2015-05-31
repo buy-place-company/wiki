@@ -48,7 +48,7 @@ Buy-it API is a *game* service similar to cashsquare
                 "level": 5,
                 "avatar": "http://url",
                 "score": 3,
-                "objects": 7,
+                "objects_count": 7,
                 "max_objects": 12,
                 "experience": 12,
         }
@@ -60,7 +60,7 @@ Buy-it API is a *game* service similar to cashsquare
                 "level": 5,
                 "avatar": "http://url",
                 "score": 3,
-                "objects": 7,
+                "objects_count": 7,
                 "max_objects": 12,
                 "experience": 12,
                 "cache": 12
