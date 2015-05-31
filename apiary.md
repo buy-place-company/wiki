@@ -2,7 +2,43 @@ FORMAT: 1A
 
 # Buy-it API
 Buy-it API is a *game* service similar to cashsquare
+# Objects
+## Venue 
 
+        {
+                "id": "MyObjectsId", 
+                "stats": {
+                "checkinsCount": 1,
+                "usersCount": 1,
+                "tipCount": 1
+                },
+                "name": "MyObjectsName",
+                "category": "Name of the category",
+                "type": "social",
+                "lvl": 10,
+                "owner": {},
+                "latitude": 44.4,
+                "longitude": 38.1,
+                "max_loot": 900,
+                "income": 12,
+                "expense": 15,
+                "buy_price": null,
+                "update_price": 1500,
+                "sell_price": 500,
+                "deal_price": 750,
+                "loot": 412
+        }
+        
+## User
+        {
+                "id": 43,
+                "username": "John",
+                "level": 5,
+                "avatar": "http://url",
+                "score": 3,
+                "objects": 7,
+                "max_objects": 12
+        }
 ## Objects [/objects]
 ### Get objects around the point [GET]
 + Request (application/json)
@@ -17,75 +53,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "places": [{
-                                "id": "MyObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "MyObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 900,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": 1500,
-                                "sell_price": 500,
-                                "deal_price": 750,
-                                "loot": 412
-                        },
-                        {
-                                "id": "AnothersObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "AnotherObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": null,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": null,
-                                "sell_price": null,
-                                "deal_price": 750,
-                                "loot": null
-                        },
-                        {
-                                "id": "NobodysObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "NobodysObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 500,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": 1000,
-                                "update_price": null,
-                                "sell_price": null,
-                                "deal_price": null,
-                                "loot": "144"
-                }]
+                "places": [list objects of Venue's type]
         }
 
 Обратить внимание на различные стоимости. В зависимости от типа здания (моё, не моё, ничьё) возвращать нужные цены. Соответственно deal_price должна быть больше чем sell_price и меньше чем buy_price (предлагаю формулу для вычисления price=checkins\*f(lvl)\*k, где k - какой то коээфициент). Это стоимость купли/продажи здания между игроками и обоим сторонам это должно быть выгоднее, чем торговать с игрой. 
@@ -109,29 +77,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "places": [{
-                                "id": "MyObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "MyObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 900,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": 1500,
-                                "sell_price": 500,
-                                "deal_price": 750,
-                                "loot": 412
-                }]
+                "places": [venue objects]
         }
 
 ## List players objects [/players_objects/{players_id}]
@@ -147,29 +93,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "places": [{
-                                "id": "AnothersObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "AnotherObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 500,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": null,
-                                "sell_price": null,
-                                "deal_price": 750,
-                                "loot": 314
-                }]
+                "places": [venue objects]
         }
 То же самое что и GET /my_objects, только возвращать объекты player'а по player_id.
         
@@ -185,29 +109,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "data": {
-                                "id": "MyObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "MyObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 900,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": 1500,
-                                "sell_price": 500,
-                                "deal_price": 750,
-                                "loot": 412
-                }
+                "data": Venue object
         }
         
   
@@ -225,38 +127,8 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "place": {
-                                "id": "MyObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "MyObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 900,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": 1500,
-                                "sell_price": 500,
-                                "deal_price": 750,
-                                "loot": 412
-                },
-                profile: {
-                                "id": 46,
-                                "score": 6535,
-                                "username: "Vasya Pupkin",
-                                "level": 4,
-                                "objects": 7,
-                                "max_objects": 12,
-                                "avatar": "http://url"
-                }
+                "place": Venue object,
+                "profile": User object
         }
 buy - купить у игры.
 sell - продать игре.
@@ -278,43 +150,8 @@ collect_loot - собрать loot.
         
         {
                 "status":200,
-                "rating": [{
-                        "id": 43,
-                        "username": "John",
-                        "level": 5,
-                        "avatar": "http://url",
-                        "score": 3,
-                        "objects": 7,
-                        "max_objects": 12
-                }, 
-                {
-                        "id": 3,
-                        "username": "Anna",
-                        "level" : 3,
-                        "avatar": "http://url2",
-                        "score": 2,
-                        "objects": 7,
-                        "max_objects": 12
-                },
-                {
-                        "id": 47,
-                        "username": "Suzy",
-                        "level": 5,
-                        "avatar": "http://url3",
-                        "score": 1,
-                        "objects": 7,
-                        "max_objects": 12
-                }],
-                "profile": {
-                        "id": 46,
-                        "score": 6535,
-                        "username: "Vasya Pupkin",
-                        "level": 4,
-                        "avatar": "http://url",
-                        "objects": 7,
-                        "max_objects": 12,
-                
-                }
+                "rating": [list User's type objects],
+                "profile": User object
         }
 
 Рейтинг лист. Позицию не передавать. Будет вычисляться как переданный offset + порядковый номер в массиве.
@@ -333,15 +170,7 @@ collect_loot - собрать loot.
         
         {
                 "status":200,
-                "player": {
-                        "id": 43,
-                        "username": "John",
-                        "level": 2,
-                        "avatar": "http://url",
-                        "score": 3,
-                        "objects": 7,
-                        "max_objects": 12
-                }
+                "player": User object
         }
 
 ## Deals [/deals]
@@ -359,14 +188,14 @@ collect_loot - собрать loot.
                 "data": [{
                     "id": 20,
                     "type": "outbox",
-                    "player": {},
-                    "object": {}
+                    "player": User object,
+                    "object": Venue object
                 }, 
                 {
                     "id": 25,
                     "type": "inbox",
-                    "player": {},
-                    "object": {}
+                    "player": User object,
+                    "object": Venue object
                 }]
         }
 
@@ -386,47 +215,9 @@ collect_loot - собрать loot.
         
         {
                 "status":200,
-                "place": {
-                                "id": "MyObjectsId", 
-                                "stats": {
-                                "checkinsCount": 1,
-                                "usersCount": 1,
-                                "tipCount": 1
-                                },
-                                "name": "MyObjectsName",
-                                "category": "Name of the category",
-                                "type": "social",
-                                "lvl": 10,
-                                "owner": {},
-                                "latitude": 44.4,
-                                "longitude": 38.1,
-                                "max_loot": 900,
-                                "income": 12,
-                                "expense": 15,
-                                "buy_price": null,
-                                "update_price": 1500,
-                                "sell_price": 500,
-                                "deal_price": 750,
-                                "loot": 412
-                },
-                profile: {
-                                "id": 46,
-                                "score": 6535,
-                                "username: "Vasya Pupkin",
-                                "level": 4,
-                                "objects": 7,
-                                "max_objects": 12,
-                                "avatar": "http://url"
-                },
-                player: {
-                                "id": 43,
-                                "username": "John",
-                                "level": 2,
-                                "avatar": "http://url",
-                                "score": 3,
-                                "objects": 7,
-                                "max_objects": 12
-                }
+                "place": Venue object,
+                selling_player: Player1 User object,
+                buying_player: Player2 User object
         }
 
 
@@ -443,15 +234,7 @@ collect_loot - собрать loot.
         
         {
                 "status":200,
-                "data": {
-                        "id": 46,
-                        "score": 6535,
-                        "username: "Vasya Pupkin",
-                        "avatar": "http://url",
-                        "level": 4,
-                        "objects": 7,
-                        "max_objects": 12
-                }
+                "data": Deals objects
         }
 objects - текущее количество объектов в пользователя.
 max_objects - максимальное количество объектов, которые пользователь может купить. max_objects = f(level).
