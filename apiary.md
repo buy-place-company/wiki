@@ -49,12 +49,10 @@ Buy-it API is a *game* service similar to cashsquare
                 "score": 3,
                 "objects": 7,
                 "max_objects": 12,
-                "experience": 
+                "experience": 12,
+                "cache": 12
         }
-    experience_count = models.BigIntegerField(default=0)
-     = models.BigIntegerField(default=0)
-    money_amount = models.BigIntegerField(default=START_MONEY_AMOUNT)
-    buildings_count = models.SmallIntegerField(default=0)
+        
 ## Objects [/objects]
 ### Get objects around the point [GET]
 + Request (application/json)
