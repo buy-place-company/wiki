@@ -89,23 +89,21 @@ Buy-it API is a *game* service similar to cashsquare
 
 Хэши можно передавать в любом случае (null) или не передавать, если они не нужны. Наверное это дело вкуса. Или как то переструктурировать JSON.
 "income"/"expence" - доход/расход за ед.вр. (1 час может быть?) вычисляется от чекинов и уровня здания??? + нужен какой то негативный фактор. Санэпидем или как то так.
-
-
-## List user's objects [/my_objects]
-### GET objects [GET]
-
+## Profile [/profile/{player_id}]
+### GET user profile [GET]
 + Request (application/json)
 
         { 
                 "access_token": "dtgthzergateavnbategsbaebaenst4"
         }
-    
+        
 + Response 200 (application/json)
 
         {
                 "status":200,
-                "places": [private venue objects]
+                "places": [public venue objects]
         }
+
 
 ## List players objects [/players_objects/{players_id}]
 ### GET objects [GET]
@@ -183,23 +181,6 @@ collect_loot - собрать loot.
 
 Рейтинг лист. Позицию не передавать. Будет вычисляться как переданный offset + порядковый номер в массиве.
 
-## Rating [/rating/{user_id}]      
-### GET user from rating [POST]
-+ Request (application/json)
-
-        { 
-            "access_token": "dtgthzergateavnbategsbaebaenst4"
-            "limit": 20,
-            "offset": 50
-        }
-    
-+ Response 200 (application/json)
-        
-        {
-                "status":200,
-                "player": public User object
-        }
-
 ## Deals [/deals]
 ### Get deals list [GET]
 + Request (application/json)
@@ -247,21 +228,5 @@ collect_loot - собрать loot.
                 buying_player: Player2 User object
         }
 
-
-
-## Profile [/profile]
-### Get deals list [GET]
-+ Request (application/json)
-
-        { 
-            "access_token": "dtgthzergateavnbategsbaebaenst4"
-        }
-        
-+ Response 200 (application/json)
-        
-        {
-                "status":200,
-                "data": Deals objects
-        }
 objects - текущее количество объектов в пользователя.
 max_objects - максимальное количество объектов, которые пользователь может купить. max_objects = f(level).
