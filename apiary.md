@@ -8,22 +8,16 @@ Buy-it API is a *game* service similar to cashsquare
         {
                 "id": "MyObjectsId", 
                 "stats": {
-                "checkinsCount": 1,
-                "usersCount": 1,
-                "tipCount": 1
+                        "checkinsCount": 1,
+                        "usersCount": 1,
+                        "tipCount": 1
                 },
                 "name": "MyObjectsName",
                 "category": "Name of the category",
-                "type": "social",
                 "lvl": 10,
                 "owner": {},
                 "latitude": 44.4,
                 "longitude": 38.1,
-                "max_loot": 900,
-                "income": 12,
-                "buy_price": null,
-                "update_price": 1500,
-                "sell_price": 500,
         }
         
 ## Private Venue 
@@ -36,7 +30,6 @@ Buy-it API is a *game* service similar to cashsquare
                 },
                 "name": "MyObjectsName",
                 "category": "Name of the category",
-                "type": "social",
                 "lvl": 10,
                 "owner": {},
                 "latitude": 44.4,
