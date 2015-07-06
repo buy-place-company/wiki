@@ -40,6 +40,8 @@ Buy-it API is a *game* service similar to cashsquare
                 "update_price": 1500,
                 "sell_price": 500,
                 "loot": 500,
+                "expense": 34534,
+                "consumption": 3453
         }
 ## User
         {
