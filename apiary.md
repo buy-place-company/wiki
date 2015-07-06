@@ -91,12 +91,13 @@ Buy-it API is a *game* service similar to cashsquare
 
 Хэши можно передавать в любом случае (null) или не передавать, если они не нужны. Наверное это дело вкуса. Или как то переструктурировать JSON.
 "income"/"expence" - доход/расход за ед.вр. (1 час может быть?) вычисляется от чекинов и уровня здания??? + нужен какой то негативный фактор. Санэпидем или как то так.
-## Profile [/profile/{player_id}]
+## Profile [/profile/]
 ### GET user profile [GET]
 + Request (application/json)
 
         { 
-                "access_token": "dtgthzergateavnbategsbaebaenst4"
+                "access_token": "dtgthzergateavnbategsbaebaenst4",
+                "id": 123456
         }
         
 + Response 200 (application/json)
@@ -114,7 +115,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         { 
                 "access_token": "dtgthzergateavnbategsbaebaenst4"
-                "pid": 12345
+                "id": 12345
         }
         
 + Response 200 (application/json)
@@ -125,12 +126,13 @@ Buy-it API is a *game* service similar to cashsquare
         }
 То же самое что и GET /my_objects, только возвращать объекты player'а по player_id.
         
-## Get object info [/object/{id}]      
+## Get object info [/object/]      
 ### Get object [GET]
 + Request (application/json)
 
         {
-                "access_token": "dtgthzergateavnbategsbaebaenst4"
+                "access_token": "dtgthzergateavnbategsbaebaenst4",
+                "id": 123456
         }
     
 + Response 200 (application/json)
