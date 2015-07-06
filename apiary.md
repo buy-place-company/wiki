@@ -107,13 +107,14 @@ Buy-it API is a *game* service similar to cashsquare
         }
 
 
-## List players objects [/players_objects/{players_id}]
+## List players objects [/players_objects/]
 ### GET objects [GET]
 
 + Request (application/json)
 
         { 
                 "access_token": "dtgthzergateavnbategsbaebaenst4"
+                "pid": 12345
         }
         
 + Response 200 (application/json)
