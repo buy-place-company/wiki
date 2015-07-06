@@ -74,8 +74,8 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
             "access_token": "dtgthzergateavnbategsbaebaenst4",
-            "latitiude": 44.3,
-            "longitude": 37.2
+            "lat": 44.3,
+            "lng": 37.2
         }
     
 + Response 200 (application/json)
