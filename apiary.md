@@ -180,8 +180,8 @@ collect_loot - собрать loot.
         
         {
                 "status":200,
-                "rating": [private list User's type objects],
-                "profile": User object
+                "users": [private list User's type objects],
+                "user": User object
         }
 
 Рейтинг лист. Позицию не передавать. Будет вычисляться как переданный offset + порядковый номер в массиве.
