@@ -132,7 +132,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "access_token": "dtgthzergateavnbategsbaebaenst4",
-                "id": 123456
+                "venue_id": 123456
         }
     
 + Response 200 (application/json)
