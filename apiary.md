@@ -1,5 +1,3 @@
-FORMAT: 1A
-
 # Buy-it API
 Buy-it API is a *game* service similar to cashsquare
 # Objects
