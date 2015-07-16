@@ -66,7 +66,7 @@ Buy-it API is a *game* service similar to cashsquare
                 "cache": 12
         }
         
-## Objects [/objects]
+## Objects [/zone/venues]
 ### Get objects around the point [GET]
 + Request (application/json)
 
@@ -80,7 +80,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "places": [list objects of public Venue's type] 
+                "venues": [list objects of public Venue's type] 
         }
 
 Обратить внимание на различные стоимости. В зависимости от типа здания (моё, не моё, ничьё) возвращать нужные цены. Соответственно deal_price должна быть больше чем sell_price и меньше чем buy_price (предлагаю формулу для вычисления price=checkins\*f(lvl)\*k, где k - какой то коээфициент). Это стоимость купли/продажи здания между игроками и обоим сторонам это должно быть выгоднее, чем торговать с игрой. 
@@ -102,11 +102,11 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "places": [public venue objects]
+                "venues": [public venue objects]
         }
 
 
-## List players objects [/players_objects/]
+## List players objects [/user/venues]
 ### GET objects [GET]
 
 + Request (application/json)
@@ -120,11 +120,11 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "places": [public venue objects]
+                "venues": [public venue objects]
         }
 То же самое что и GET /my_objects, только возвращать объекты player'а по player_id.
         
-## Get object info [/object/]      
+## Get object info [/venue/info]      
 ### Get object [GET]
 + Request (application/json)
 
@@ -141,7 +141,7 @@ Buy-it API is a *game* service similar to cashsquare
         }
         
   
-## Do action with object [/object]      
+## Do action with object [/venues/action]      
 ### buy/sell/upgrade/collect_loot object [POST]
 + Request (application/json)
 
@@ -156,7 +156,7 @@ Buy-it API is a *game* service similar to cashsquare
         {
                 "status":200,
                 "venue": (private if success else public) Venue object,
-                "profile": Private User object
+                "user": Private User object
         }
 buy - купить у игры.
 sell - продать игре.
@@ -196,17 +196,23 @@ collect_loot - собрать loot.
         
         {
                 "status":200,
-                "data": [{
-                    "id": 20,
-                    "type": "outbox",
-                    "player": User object,
-                    "object": Venue object
+                "deals": [{
+                    'id': 
+                    'venue': ,
+                    'user_from': ,
+                    'user_to': ,
+                    'amount': ,
+                    'date_added': ,
+                    'date_expired': ,
                 }, 
                 {
-                    "id": 25,
-                    "type": "inbox",
-                    "player": User object,
-                    "object": Venue object
+                    'id': 
+                    'venue': ,
+                    'user_from': ,
+                    'user_to': ,
+                    'amount': ,
+                    'date_added': ,
+                    'date_expired': ,
                 }]
         }
 
