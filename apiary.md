@@ -155,7 +155,7 @@ Buy-it API is a *game* service similar to cashsquare
 
         {
                 "status":200,
-                "place": (private if success else public) Venue object,
+                "venue": (private if success else public) Venue object,
                 "profile": Private User object
         }
 buy - купить у игры.
